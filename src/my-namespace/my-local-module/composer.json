@@ -1,0 +1,16 @@
+{
+    "name": "my-namespace/my-local-module",
+    "license": "proprietary",
+    "description": "",
+    "require": {
+    },
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Namespace\\MyModule\\": ""
+        }
+    }
+}
