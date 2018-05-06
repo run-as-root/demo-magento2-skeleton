@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
+         colors="true"
+         bootstrap="www/dev/tests/unit/framework/bootstrap.php"
+>
+    <testsuite name="Project Unit Tests">
+        <directory suffix="Test.php">src/*/*/Test/Unit</directory>
+    </testsuite>
+    <php>
+        <ini name="date.timezone" value="Europe/Berlin" />
+        <ini name="xdebug.max_nesting_level" value="200" />
+    </php>
+    <filter>
+        <whitelist addUncoveredFilesFromWhiteList="true">
+            <directory suffix=".php">src</directory>
+            <exclude>
+                <file>src/*/*/cli_commands.php</file>
+                <file>src/*/*/registration.php</file>
+                <directory suffix="registration.php">src/*/*/</directory>
+
+                <directory>src/*/*/Test</directory>
+                <directory>src/*/*/Setup</directory>
+
+                <directory>www/lib/internal/*/*/Test</directory>
+                <directory>www/lib/internal/*/*/*/Test</directory>
+
+                <directory>www/setup/src/*/*/Test</directory>
+
+                <directory>www/update/app/code/*/*/Test</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+    <listeners>
+        <listener class="Magento\Framework\TestFramework\Unit\Listener\ReplaceObjectManager"/>
+    </listeners>
+</phpunit>

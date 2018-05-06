@@ -1,8 +1,6 @@
 .idea
 .DS_Store
 
-build/output
-
 # Magento
 /www/*
 /www/app/etc/*
@@ -11,7 +9,6 @@ build/output
 /www/app/design/*/Magento
 /www/app/i18n/magento/
 /www/app/*.*
-!/www/composer.*
 
 # docker
 .env
